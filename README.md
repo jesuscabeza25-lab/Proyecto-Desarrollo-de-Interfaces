@@ -59,9 +59,16 @@
 | Minimización de pagos | Sí (algoritmo interno) | Sí | Sí (algoritmo propio en Java) |
 | Dificultad de uso | Media (muchos menús y opciones) | Baja | Mínima (interfaz directa en una sola ventana) |
 
+
+El resto de aplicaciones introducen demasiados micropagos y dificultades a la hora de dividir los gastos, nuestra aplicación ofrece una interfaz mucho mas sencilla rápida y sin coste alguno con usos ilimitados
+
+Los datos introducidos se guardan localmente en tu dispositivo particular y no se va a ninguna base de datos de la empresa para garantizar máxima privacidad.
+
+---
+
 ## 5. Ejemplo de Funcionamiento
 
-Vamos a suponer un caso en el que cuatro amigos salen un de fin de semana:
+Vamos a suponer un caso en el que cuatro amigos salen un fin de semana:
 **Guillermo**,**José Luis**, **Jesús** y  **Pablo**.
 Durante la quedada se registran los siguientes movimientos:
 | Concepto | Importe | Pagado por | Participantes | Reparto |
@@ -72,29 +79,14 @@ Durante la quedada se registran los siguientes movimientos:
 
 # Resumen de Cuentas y Liquidador de Deudas
 
-###  Cálculo de Balances Individuales
-| Persona | Pagó | Debe | Balance | Estado |
-| :--- | :---: | :---: | :---: | :---: |
-| **Guillermo** | 40,00 € | 17,50 € | **+22,50 €** | Acreedor 
-| **Jesús** | 30,00 € | 17,50 € | **+12,50 €** | Acreedor 
-| **José Luis** | 18,00 € | 26,50 € | **-8,50 €** | Deudor 
-| **Pablo** | 0,00 € | 26,50 € | **-26,50 €** | Deudor 
-| **Total** | **88,00 €** | **88,00 €** | **0,00 €** | — 
+En lugar de realizar múltiples micropagos cruzados entre los 4 participantes, el sistema aplica un algoritmo voraz (*greedy*) para minimizar las transacciones a solo **3 operaciones directas**:
 
----
-### Liquidación Simplificada (Settle Up)
-En lugar de realizar múltiples micropagos cruzados entre los 4 participantes, el sistema minimiza las transacciones a solo 3 operaciones directas:
+| Origen (Deudor) | Destino (Acreedor) | Importe | Método / Concepto |
+| :--- | :--- | :--- | :--- |
+| 🔴 **Pablo** | 🟢 **Guillermo** | 22,50 € | Transferencia directa |
+| 🔴 **Pablo** | 🟢 **Jesús** | 4,00 € | Transferencia directa |
+| 🔴 **José Luis** | 🟢 **Jesús** | 8,50 € | Transferencia directa |
 
-🔴 Pablo transfiere **22,50 €** a 🟢 Guillermo.
+> ✅ **Resultado:** Con solo 3 transferencias, todas las cuentas quedan saldadas a **0,00 €** sin transacciones intermedias innecesarias.
 
-🔴 Pablo transfiere **4,00 €** a 🟢 Jesús.
 
-🔴 José Luis transfiere **8,50 €** a 🟢 Jesús.
-
-**Todas las cuentas quedarían completamente saldadas sin problema.**
-
----
-
-El resto de aplicaciones introducen demasiados micropagos y dificultades a la hora de dividir los gastos, nuestra aplicación ofrece una interfaz mucho mas sencilla rápida y sin coste alguno con usos ilimitados
-
-Los datos introducidos se guardan localmente en tu dispositivo particular y no se va a ninguna base de datos de la empresa para garantizar máxima privacidad.
