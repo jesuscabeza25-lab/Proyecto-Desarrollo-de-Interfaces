@@ -1,4 +1,4 @@
-# Proyecto-Desarrollo-de-Interfaces
+# -Proyecto-Desarrollo-de-Interfaces-
 
 Publico objetivo: Compañeros de piso, viaje con amigos y en general personas que necesiten una división seria de gastos diaria. Compañeros de trabajo....
 
