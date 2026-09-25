@@ -59,6 +59,42 @@
 | Minimización de pagos | Sí (algoritmo interno) | Sí | Sí (algoritmo propio en Java) |
 | Dificultad de uso | Media (muchos menús y opciones) | Baja | Mínima (interfaz directa en una sola ventana) |
 
+## 5. Ejemplo de Funcionamiento
+
+Vamos a suponer un caso en el que cuatro amigos salen un de fin de semana:
+**Guillermo**,**José Luis**, **Jesús** y  **Pablo**.
+Durante la quedada se registran los siguientes movimientos:
+| Concepto | Importe | Pagado por | Participantes | Reparto |
+| :--- | :--- | :--- | :--- | :--- |
+| **Cena de Pizzas** | 40,00 € | Guillermo | Todos (4) | 10,00 € / persona |
+| **Combustible coche** | 30,00 € | Jesús | Todos (4) | 7,50 € / persona |
+| **Entradas de cine** | 18,00 € | José Luis | José Luis, Pablo | 9,00 € / persona |
+
+# Resumen de Cuentas y Liquidador de Deudas
+
+###  Cálculo de Balances Individuales
+| Persona | Pagó | Debe | Balance | Estado |
+| :--- | :---: | :---: | :---: | :---: |
+| **Guillermo** | 40,00 € | 17,50 € | **+22,50 €** | Acreedor 
+| **Jesús** | 30,00 € | 17,50 € | **+12,50 €** | Acreedor 
+| **José Luis** | 18,00 € | 26,50 € | **-8,50 €** | Deudor 
+| **Pablo** | 0,00 € | 26,50 € | **-26,50 €** | Deudor 
+| **Total** | **88,00 €** | **88,00 €** | **0,00 €** | — 
+
+---
+### Liquidación Simplificada (Settle Up)
+En lugar de realizar múltiples micropagos cruzados entre los 4 participantes, el sistema minimiza las transacciones a solo 3 operaciones directas:
+
+🔴 Pablo transfiere **22,50 €** a 🟢 Guillermo.
+
+🔴 Pablo transfiere **4,00 €** a 🟢 Jesús.
+
+🔴 José Luis transfiere **8,50 €** a 🟢 Jesús.
+
+**Todas las cuentas quedarían completamente saldadas sin problema.**
+
+---
+
 El resto de aplicaciones introducen demasiados micropagos y dificultades a la hora de dividir los gastos, nuestra aplicación ofrece una interfaz mucho mas sencilla rápida y sin coste alguno con usos ilimitados
 
 Los datos introducidos se guardan localmente en tu dispositivo particular y no se va a ninguna base de datos de la empresa para garantizar máxima privacidad.
