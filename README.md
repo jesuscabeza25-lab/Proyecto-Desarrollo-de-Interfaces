@@ -2,13 +2,14 @@
 > **Gestor ágil de gastos compartidos y liquidación de deudas en local**
 
 [![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)](#)
-[![Java](https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white)](#)
+[![Flutter](https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white)](#)
 [![Swing](https://img.shields.io/badge/GUI-Swing%20%2F%20Matisse-blue?style=for-the-badge)](#)
 [![Arquitectura](https://img.shields.io/badge/Arquitectura-MVC-green?style=for-the-badge)](#)
 [![Licencia: MIT](https://img.shields.io/badge/Licencia-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
+
 ---
 
-##  1. ¿Qué es PayClear?
+## 1. ¿Qué es PayClear?
 
 **PayClear** es una aplicación de escritorio y móvil desarrollada en Java/Flutter que simplifica la división de gastos, el calcular rapidamente las cuentas y el seguimiento de deudas cotidianas entre amigos, compañeros de piso, de trabajo o de lo que necesites.
 
@@ -19,7 +20,9 @@
 * **100% Offline y Privada:** Los datos residen exclusivamente en local, garantizando privacidad total y funcionamiento sin conexión.
 * **Flujo directo en dos clics:** `Registrar cuenta/ticket` ➔ `Calcular cuotas` ➔ `Minimizar transferencias pendientes`
 
-##  2. Objetivos Principales
+---
+
+## 2. Objetivos Principales
 
 * Desarrollar una interfaz gráfica moderna, intuitiva y fluida utilizando **Java Swing** y el IDE **NetBeans**.
 * Implementar una arquitectura **Modelo-Vista-Controlador (MVC)** que desacople completamente la lógica de balances de la capa de presentación.
@@ -28,8 +31,9 @@
 * Aplicar un algoritmo simple (*greedy algorithm*) que simplifique y minimice el número total de pagos necesarios para saldar las cuentas del grupo.
 * Trabajar bajo metodología **Scrum**, gestionando el avance técnico mediante Git, ramas temáticas y *Pull Requests*.
 
+---
 
-##  3.  Funcionalidades Clave
+## 3.  Funcionalidades Clave
 
 ### 3.1 Menú de Deudas Rápidas
 * **Control inmediato:** Visualiza en un solo vistazo quién te debe dinero y a quién debes tú.
@@ -68,18 +72,27 @@ Los datos introducidos se guardan localmente en tu dispositivo particular y no s
 
 ## 5. Ejemplo de Funcionamiento
 
-Vamos a suponer un caso en el que cuatro amigos salen un fin de semana:
-**Guillermo**,**José Luis**, **Jesús** y  **Pablo**.
-Durante la quedada se registran los siguientes movimientos:
+Supongamos una salida de fin de semana con cuatro integrantes: **Guillermo**, **José Luis**, **Jesús** y **Pablo**. Durante la quedada se realizan los siguientes movimientos:
+
 | Concepto | Importe | Pagado por | Participantes | Reparto |
 | :--- | :--- | :--- | :--- | :--- |
 | **Cena de Pizzas** | 40,00 € | Guillermo | Todos (4) | 10,00 € / persona |
 | **Combustible coche** | 30,00 € | Jesús | Todos (4) | 7,50 € / persona |
 | **Entradas de cine** | 18,00 € | José Luis | José Luis, Pablo | 9,00 € / persona |
 
-# Resumen de Cuentas y Liquidador de Deudas
+### 5.1 Cálculo de Balances Individuales
 
-En lugar de realizar múltiples micropagos cruzados entre los 4 participantes, el sistema aplica un algoritmo voraz (*greedy*) para minimizar las transacciones a solo **3 operaciones directas**:
+| Persona | Pagó | Debe | Balance | Estado |
+| :--- | :--- | :--- | :--- | :--- |
+| **Guillermo** | 40,00 € | 17,50 € | **+22,50 €** | 🟢 Acreedor |
+| **Jesús** | 30,00 € | 17,50 € | **+12,50 €** | 🟢 Acreedor |
+| **José Luis** | 18,00 € | 26,50 € | **-8,50 €** | 🔴 Deudor |
+| **Pablo** | 0,00 € | 26,50 € | **-26,50 €** | 🔴 Deudor |
+| **Total** | **88,00 €** | **88,00 €** | **0,00 €** | — |
+
+### 5.2 Resumen de Cuentas y Liquidación (*Settle Up*)
+
+En lugar de realizar pagos cruzados múltiples, el sistema optimiza las transferencias a **3 transacciones directas**:
 
 | Origen (Deudor) | Destino (Acreedor) | Importe | Método / Concepto |
 | :--- | :--- | :--- | :--- |
@@ -87,6 +100,4 @@ En lugar de realizar múltiples micropagos cruzados entre los 4 participantes, e
 | 🔴 **Pablo** | 🟢 **Jesús** | 4,00 € | Transferencia directa |
 | 🔴 **José Luis** | 🟢 **Jesús** | 8,50 € | Transferencia directa |
 
-> ✅ **Resultado:** Con solo 3 transferencias, todas las cuentas quedan saldadas a **0,00 €** sin transacciones intermedias innecesarias.
-
-
+> **Resultado:** Con solo 3 transferencias, todas las cuentas quedan saldadas a **0,00 €** sin transacciones intermedias innecesarias.
