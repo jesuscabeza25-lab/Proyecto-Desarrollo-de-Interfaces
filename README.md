@@ -15,6 +15,23 @@
 >  **El problema que resolvemos:**  
 > Nace como una alternativa directa y transparente a herramientas como *Splitwise* o *Tricount*, queremos eliminar las barreras de micropagos, las suscripciones recurrentes, la publicidad invasiva y los bloqueos por límites de uso diario.
 
+##  Funcionalidades Clave
+
+### 1. Menú de Deudas Rápidas
+* **Control inmediato:** Visualiza en un solo vistazo quién te debe dinero y a quién debes tú.
+* **Componente personalizado:** Tarjetas visuales dinámicas con código de colores según el balance:
+  * 🟢 **Verde:** Saldo a favor (acreedor).
+  * 🔴 **Rojo:** Deuda pendiente (deudor).
+
+### 2.  Calculadora Ágil de Restaurante y Eventos
+* **División al instante:** Desglose rápido de tickets en cenas, viajes compartidos o taxis.
+* **Reparto automático:** Calcula la cuota equitativa por comensal en segundos.
+* **Integración en 1 clic:** Botón directo para volcar el resultado del ticket como deuda pendiente en el menú principal.
+
+### 3.  Balance y Liquidación Simplificada (*Settle Up*)
+* **Minimización de pagos:** Algoritmo optimizado para saldar todas las deudas del grupo con el menor número posible de transferencias bancarias.
+
+
 ---
 
 | Criterio / Característica | Splitwise | Tricount | Nuestra App (PayClear) |
