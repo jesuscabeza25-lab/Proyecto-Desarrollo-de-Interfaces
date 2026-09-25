@@ -1,8 +1,23 @@
-# -Proyecto-Desarrollo-de-Interfaces-
+# PayClear
+> **Gestor ágil de gastos compartidos y liquidación de deudas en local**
 
-Publico objetivo: Compañeros de piso, viaje con amigos y en general personas que necesiten una división seria de gastos diaria. Compañeros de trabajo....
+[![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)](#)
+[![Java](https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white)](#)
+[![Swing](https://img.shields.io/badge/GUI-Swing%20%2F%20Matisse-blue?style=for-the-badge)](#)
+[![Arquitectura](https://img.shields.io/badge/Architecture-MVC-green?style=for-the-badge)](#)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
+---
 
-| Criterio / Característica | Splitwise | Tricount | Nuestra App (SplitGroup) |
+##  ¿Qué es PayClear?
+
+**PayClear** es una aplicación de escritorio y móvil desarrollada en Java/Flutter que simplifica la división de gastos, el calcular rapidamente las cuentas y el seguimiento de deudas cotidianas entre amigos, compañeros de piso, de trabajo o de lo que necesites.
+
+>  **El problema que resolvemos:**  
+> Nace como una alternativa directa y transparente a herramientas como *Splitwise* o *Tricount*, queremos eliminar las barreras de micropagos, las suscripciones recurrentes, la publicidad invasiva y los bloqueos por límites de uso diario.
+
+---
+
+| Criterio / Característica | Splitwise | Tricount | Nuestra App (PayClear) |
 | --- | --- | --- | --- |
 | Plataforma principal | Móvil / Web | Móvil / Web | Movil / Web |
 | Conexión requerida | Obligatoria (Nube) | Obligatoria para sincronizar | Funciona 100% offline (local) |
