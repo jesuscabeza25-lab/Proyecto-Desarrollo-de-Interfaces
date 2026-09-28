@@ -101,3 +101,42 @@ En lugar de realizar pagos cruzados múltiples, el sistema optimiza las transfer
 | 🔴 **José Luis** | 🟢 **Jesús** | 8,50 € | Transferencia directa |
 
 > **Resultado:** Con solo 3 transferencias, todas las cuentas quedan saldadas a **0,00 €** sin transacciones intermedias innecesarias.
+>
+> ### 6 Integración de los resultados
+>
+> Hemos llevado a cabo la realización de un formulario, en el que hemos recopilado información de usuarios sobre las carencias de las aplicaciones de finanza, donde los usuarios han podido responder algunas preguntas con las que hemos podido obtener algunas ideas para nuestra app para facilitar la comodidad de los usuarios. Las preguntas son las siguientes:
+> 
+1)¿Con qué frecuencia sueles compartir gastos en grupo (cenas, viajes, piso compartido, regalos comunes)?
+
+<img width="618" height="248" alt="image" src="https://github.com/user-attachments/assets/84612323-377e-4459-8202-df6d45051bb5" />
+
+2)¿Qué herramientas utilizas actualmente para gestionar esos gastos?
+
+<img width="750" height="251" alt="image" src="https://github.com/user-attachments/assets/31727c0b-25f0-42eb-bb53-36e5f8ffac6b" />
+
+
+3)Del 1 al 5, ¿Cuánto te molestan las limitaciones actuales de apps como Splitwise (límite de gastos al día, suscripciones de pago y anuncios)?
+
+<img width="631" height="228" alt="image" src="https://github.com/user-attachments/assets/c70335b3-0037-419c-98ce-45834105b4e5" />
+
+
+4)¿Qué motivos harían que probaras una nueva app de división de gastos?
+
+<img width="753" height="258" alt="image" src="https://github.com/user-attachments/assets/41974071-6995-4dd0-95dc-3417f9a7f722" />
+
+
+5)¿Qué plataforma te resultaría más útil para este tipo de aplicación?
+
+<img width="633" height="237" alt="image" src="https://github.com/user-attachments/assets/c15ee398-f7e8-41f6-a910-01330bf6b985" />
+
+
+6)¿Qué funcionalidad echas en falta en las aplicaciones de gastos que usas ahora?
+
+Las respuestas de los usuarios son:
+
+-Rapidez y más seguridad sin control estatal de mis gastos menores
+-La division de gastos por persona
+-Poder pagar a plazos tipo si debes 10€ poder pagar 5 y otro día otros 5
+-No uso ninguna
+-No quiero anuncios ni micropagos abusivos
+-Recordatorios constantes y programables
