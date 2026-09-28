@@ -134,9 +134,29 @@ En lugar de realizar pagos cruzados múltiples, el sistema optimiza las transfer
 
 Las respuestas de los usuarios son:
 
--Rapidez y más seguridad sin control estatal de mis gastos menores.
--La division de gastos por persona.
--Poder pagar a plazos tipo si debes 10€ poder pagar 5 y otro día otros 5.
--No uso ninguna.
--No quiero anuncios ni micropagos abusivos.
--Recordatorios constantes y programables.
+* Rapidez y más seguridad sin control estatal de mis gastos menores.
+* La división de gastos por persona.
+* Poder pagar a plazos tipo si debes 10€ poder pagar 5 y otro día otros 5.
+* No uso ninguna.
+* No quiero anuncios ni micropagos abusivos.
+* Recordatorios constantes y programables.
+
+Resultados Clave de la Encuesta:
+* **Necesidad Frecuente:** El 85,7% de los participantes comparte gastos en grupo de forma habitual o en eventos puntuales.
+
+* **Uso de Métodos Informales:** El 85,7% confía en métodos informales como Bizum directo o la memoria, mientras que solo el 28,6% usa herramientas específicas como Tricount y un 0% utiliza Splitwise.
+
+* **Frustración con las Apps Actuales:** El 71,4% de los encuestados muestra malestar con las limitaciones impuestas por las apps actuales (publicidad molesta, límites de gastos diarios y muros de pago).
+
+* **Factores Decisivos de Adopción:**
+    * 85,7% exige que la app sea 100% gratuita y sin límites de gastos diarios.
+
+    * 42,9% valora no tener la obligación de registrarse con un correo electrónico.
+
+    * 28,6% solicita funcionamiento offline (sin conexión a internet).
+
+* **Plataforma:** El 57,1% prefiere una solución orientada a móviles con soporte web para gestionar gastos complejos desde un ordenador.
+
+**Conclusión:**
+Los datos recopilados confirman que los usuarios están abandonando las apps tradicionales debido a sus grandes restricciones de monetización, volviendo a métodos manuales e ineficientes.
+Actualmente seguimos con las encuestas abiertas para ampliar nuestros conocimientos de las necesidades del cliente. Pero si tuviéramos que guiarnos por las respuestas que llevamos actualmente nuestra intención seria ofrecer una plataforma multiplataforma, 100% gratuita, sin límites diarios y enfocada en la rapidez, incorporando además opciones flexibles solicitadas por los usuarios como el control de pagos parciales y la división personalizada de gastos.
