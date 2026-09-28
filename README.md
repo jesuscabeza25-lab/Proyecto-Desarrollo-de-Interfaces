@@ -102,7 +102,7 @@ En lugar de realizar pagos cruzados múltiples, el sistema optimiza las transfer
 
 > **Resultado:** Con solo 3 transferencias, todas las cuentas quedan saldadas a **0,00 €** sin transacciones intermedias innecesarias.
 >
-> ## 6 Integración de los resultados
+> # 6 Integración de los resultados
 >
 > Hemos llevado a cabo la realización de un formulario, en el que hemos recopilado información de usuarios sobre las carencias de las aplicaciones de finanza, donde los usuarios han podido responder algunas preguntas con las que hemos podido obtener algunas ideas para nuestra app para facilitar la comodidad de los usuarios. Las preguntas son las siguientes:
 > 
