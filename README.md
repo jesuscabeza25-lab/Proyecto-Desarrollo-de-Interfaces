@@ -102,61 +102,90 @@ En lugar de realizar pagos cruzados múltiples, el sistema optimiza las transfer
 
 > **Resultado:** Con solo 3 transferencias, todas las cuentas quedan saldadas a **0,00 €** sin transacciones intermedias innecesarias.
 >
-> # 6 Integración de los resultados
 >
-> Hemos llevado a cabo la realización de un formulario, en el que hemos recopilado información de usuarios sobre las carencias de las aplicaciones de finanza, donde los usuarios han podido responder algunas preguntas con las que hemos podido obtener algunas ideas para nuestra app para facilitar la comodidad de los usuarios. Las preguntas son las siguientes:
-> 
-1)¿Con qué frecuencia sueles compartir gastos en grupo (cenas, viajes, piso compartido, regalos comunes)?
-
-<img width="618" height="248" alt="image" src="https://github.com/user-attachments/assets/84612323-377e-4459-8202-df6d45051bb5" />
-
-2)¿Qué herramientas utilizas actualmente para gestionar esos gastos?
-
-<img width="750" height="251" alt="image" src="https://github.com/user-attachments/assets/31727c0b-25f0-42eb-bb53-36e5f8ffac6b" />
 
 
-3)Del 1 al 5, ¿Cuánto te molestan las limitaciones actuales de apps como Splitwise (límite de gastos al día, suscripciones de pago y anuncios)?
+## 6. Estudio de Mercado y Validación con Usuarios
 
-<img width="631" height="228" alt="image" src="https://github.com/user-attachments/assets/c70335b3-0037-419c-98ce-45834105b4e5" />
+Para contrastar las hipótesis iniciales del proyecto y validar la necesidad real frente a las soluciones comerciales actuales, se desplegó un estudio de campo mediante un formulario estructurado de investigación. La muestra recoge hábitos de gasto compartido, herramientas empleadas, fricciones con los modelos de monetización vigentes y funcionalidades prioritarias.
 
+---
 
-4)¿Qué motivos harían que probaras una nueva app de división de gastos?
+### 6.1 Resultados Cuantitativos
 
-<img width="753" height="258" alt="image" src="https://github.com/user-attachments/assets/41974071-6995-4dd0-95dc-3417f9a7f722" />
+#### 1. Frecuencia de gastos compartidos
+> *¿Con qué frecuencia sueles compartir gastos en grupo (cenas, viajes, piso compartido, regalos comunes)?*
 
+<p align="center">
+  <img width="618" height="248" alt="Frecuencia de gastos compartidos" src="https://github.com/user-attachments/assets/84612323-377e-4459-8202-df6d45051bb5" />
+</p>
 
-5)¿Qué plataforma te resultaría más útil para este tipo de aplicación?
+* **Hallazgo:** El **85,7%** de los participantes comparte gastos de manera recurrente o en eventos puntuales, lo que ratifica la vigencia y regularidad del problema planteado.
 
-<img width="633" height="237" alt="image" src="https://github.com/user-attachments/assets/c15ee398-f7e8-41f6-a910-01330bf6b985" />
+---
 
+#### 2. Herramientas utilizadas actualmente
+> *¿Qué herramientas utilizas actualmente para gestionar esos gastos?*
 
-6)¿Qué funcionalidad echas en falta en las aplicaciones de gastos que usas ahora?
+<p align="center">
+  <img width="750" height="251" alt="Herramientas utilizadas" src="https://github.com/user-attachments/assets/31727c0b-25f0-42eb-bb53-36e5f8ffac6b" />
+</p>
 
-Las respuestas de los usuarios son:
+* **Hallazgo:** El **85,7%** depende de métodos informales propensos al error (Bizum directo o memoria). Solo un 28,6% recurre a soluciones especializadas como Tricount y un 0% utiliza activamente Splitwise dentro de la muestra, evidenciando una barrera de adopción en el software existente.
 
-* Rapidez y más seguridad sin control estatal de mis gastos menores.
-* La división de gastos por persona.
-* Poder pagar a plazos tipo si debes 10€ poder pagar 5 y otro día otros 5.
-* No uso ninguna.
-* No quiero anuncios ni micropagos abusivos.
-* Recordatorios constantes y programables.
+---
 
-Resultados Clave de la Encuesta:
-* **Necesidad Frecuente:** El 85,7% de los participantes comparte gastos en grupo de forma habitual o en eventos puntuales.
+#### 3. Nivel de fricción con las limitaciones comerciales
+> *Del 1 al 5, ¿cuánto te molestan las limitaciones actuales de apps como Splitwise (límite de gastos al día, suscripciones de pago y anuncios)?*
 
-* **Uso de Métodos Informales:** El 85,7% confía en métodos informales como Bizum directo o la memoria, mientras que solo el 28,6% usa herramientas específicas como Tricount y un 0% utiliza Splitwise.
+<p align="center">
+  <img width="631" height="228" alt="Molestia por limitaciones comerciales" src="https://github.com/user-attachments/assets/c70335b3-0037-419c-98ce-45834105b4e5" />
+</p>
 
-* **Frustración con las Apps Actuales:** El 71,4% de los encuestados muestra malestar con las limitaciones impuestas por las apps actuales (publicidad molesta, límites de gastos diarios y muros de pago).
+* **Hallazgo:** El **71,4%** de los encuestados sitúa su descontento en los niveles más altos (puntuaciones de 4 y 5) frente a los muros de pago, la publicidad invasiva y los límites diarios de registro.
 
-* **Factores Decisivos de Adopción:**
-    * 85,7% exige que la app sea 100% gratuita y sin límites de gastos diarios.
+---
 
-    * 42,9% valora no tener la obligación de registrarse con un correo electrónico.
+#### 4. Factores clave para la adopción de una nueva alternativa
+> *¿Qué motivos harían que probaras una nueva app de división de gastos?*
 
-    * 28,6% solicita funcionamiento offline (sin conexión a internet).
+<p align="center">
+  <img width="753" height="258" alt="Motivos de adopción" src="https://github.com/user-attachments/assets/41974071-6995-4dd0-95dc-3417f9a7f722" />
+</p>
 
-* **Plataforma:** El 57,1% prefiere una solución orientada a móviles con soporte web para gestionar gastos complejos desde un ordenador.
+* **Hallazgo:** La gratuidad sin restricciones de uso diario (**85,7%**) y el acceso directo sin necesidad de registro ni cuentas obligatorias (**42,9%**) representan los dos catalizadores esenciales de conversión.
 
-**Conclusión:**
-Los datos recopilados confirman que los usuarios están abandonando las apps tradicionales debido a sus grandes restricciones de monetización, volviendo a métodos manuales e ineficientes.
-Actualmente seguimos con las encuestas abiertas para ampliar nuestros conocimientos de las necesidades del cliente. Pero si tuviéramos que guiarnos por las respuestas que llevamos actualmente nuestra intención seria ofrecer una plataforma multiplataforma, 100% gratuita, sin límites diarios y enfocada en la rapidez, incorporando además opciones flexibles solicitadas por los usuarios como el control de pagos parciales y la división personalizada de gastos.
+---
+
+#### 5. Preferencia de plataforma
+> *¿Qué plataforma te resultaría más útil para este tipo de aplicación?*
+
+<p align="center">
+  <img width="633" height="237" alt="Preferencia de plataforma" src="https://github.com/user-attachments/assets/c15ee398-f7e8-41f6-a910-01330bf6b985" />
+</p>
+
+* **Hallazgo:** El **57,1%** demanda una solución móvil con soporte para entornos de escritorio, respaldando la hoja de ruta técnica planteada: desarrollo del núcleo y prototipo de escritorio en Java Swing, con posterior cliente móvil en Flutter.
+
+---
+
+### 6.2 Demandas Cualitativas del Usuario
+
+El análisis de texto abierto permitió categorizar las carencias funcionales más repetidas por los participantes:
+
+| Categoría | Peticiones registradas | Impacto en PayClear |
+| :--- | :--- | :--- |
+| **Monetización y Fricción** | "No quiero anuncios ni micropagos abusivos." | Arquitectura 100% gratuita, sin capas de suscripción ni muros de pago. |
+| **Privacidad y Control** | "Rapidez y más seguridad sin control estatal de mis gastos menores." | Modelo *Local-First*: los datos no viajan a servidores remotos ni requieren identificación personal. |
+| **Flexibilidad Contable** | "Poder pagar a plazos tipo si debes 10€ poder pagar 5 y otro día otros 5."<br>"La división de gastos por persona." | Inclusión de liquidaciones parciales y desglose asimétrico de gastos en el modelo de datos. |
+| **Operativa Diaria** | "Recordatorios constantes y programables." | Considerado para el módulo de notificaciones y exportación del Sprint 2. |
+
+---
+
+### 6.3 Conclusiones e Implicaciones de Diseño
+
+El estudio confirma que el usuario medio no rechaza el concepto de repartir cuentas digitalmente, sino el modelo de negocio extractivo de los competidores actuales (límites artificiales y cobros recurrentes), lo que fuerza una regresión hacia métodos manuales e ineficientes como notas de móvil o transferencias desordenadas por Bizum.
+
+Estos hallazgos consolidan las directrices de PayClear:
+1. **Acceso Inmediato:** Cero pantallas de inicio de sesión o petición de datos personales.
+2. **Soberanía del Dato:** Persistencia local estricta sin dependencia de servicios en la nube.
+3. **Optimización Real de Pagos:** Implementación del algoritmo voraz para liquidar saldos cruzados con el menor número de operaciones bancarias posible.
