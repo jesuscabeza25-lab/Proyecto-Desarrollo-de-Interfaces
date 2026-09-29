@@ -1,4 +1,9 @@
-# PayClear
+<p align="center">
+  <img src="img/logo-payClear.png" alt="PayClear Logo" width="200" />
+</p>
+
+<h1 align="center">PayClear</h1>
+
 > **Gestor ágil de gastos compartidos y liquidación de deudas en local**
 
 [![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)](#)
