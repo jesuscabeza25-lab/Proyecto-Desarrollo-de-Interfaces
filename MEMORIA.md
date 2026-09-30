@@ -1,200 +1,89 @@
-# Memoria Técnica de Desarrollo: PayClear
+# Memoria del Proyecto Intermodular: PayClear
 
-* Asignatura: Desarrollo de Interfaces
+* Asignatura: Proyecto Intermodular
 * Curso: 2º Desarrollo de Aplicaciones Multiplataforma (DAM)
 * Convocatoria: Sprint 1 - Ideación, Arquitectura y Prototipado Base
+* Fecha: Octubre 2026
 
 ---
 
-## 1. Descripción del Proyecto y Justificación del Problema
+# 1. INTRODUCCIÓN
 
-### 1.1 Planteamiento y Necesidad Real
-PayClear es una plataforma de software orientada a la gestión contable y la compensación multilateral de saldos en entornos compartidos. En ámbitos grupales, los adelantos económicos asimétricos suelen desembocar en transferencias cruzadas redundantes, disputas interpersonales y falta de transparencia contable.
+## 1.1. Contexto del proyecto
+El proyecto **PayClear** se desarrolla en el marco académico del módulo profesional de **Proyecto Intermodular**, correspondiente al segundo curso del Ciclo Formativo de Grado Superior en **Desarrollo de Aplicaciones Multiplataforma (DAM)**.
 
-A diferencia de las opciones comerciales existentes en el mercado, PayClear garantiza soberanía de datos (Local-First), ausencia total de muros de pago o límites diarios de operación, y un flujo de entrada optimizado en dos pasos: registrar movimiento y liquidar deudas.
+La iniciativa surge durante el **Sprint 1** (fase orientada a ideación, arquitectura y prototipado base) como respuesta a la necesidad de diseñar una herramienta de software centrada en la gestión contable y la compensación multilateral de deudas en entornos compartidos. El proyecto se articula en una hoja de ruta progresiva: parte de un prototipo interactivo de alta fidelidad en Figma, continúa con una implementación de escritorio en Java Swing mediante NetBeans Matisse, y culmina en su posterior adaptación multiplataforma con Flutter.
 
-### 1.2 Identificación del Público Objetivo
-* **Compañeros de Piso:** Reparto mensual de suministros comunes (electricidad, gas, agua, conexión a internet) y cesta de limpieza sin necesidad de registros manuales.
-* **Viajeros y Grupos de Ocio:** Liquidación al término de desplazamientos donde existen gastos heterogéneos (alojamientos, combustibles, entradas, peajes).
-* **Colectivos y Asociaciones:** Entidades juveniles, deportivas o estudiantiles donde varios coordinadores adelantan compras y necesitan cerrar cuentas sin descuadres.
+## 1.2. Problema o necesidad detectada
+En dinámicas de convivencia y actividades colectivas (pisos compartidos, viajes grupales, asociaciones o colectivos juveniles), la asimetría de los gastos adelantados por distintos miembros produce habitualmente:
+* Transferencias cruzadas repetitivas e ineficientes.
+* Errores en el cálculo manual y falta de transparencia sobre las cantidades pendientes.
+* Conflictos y desacuerdos interpersonales.
 
-### 1.3 Objetivos Principales de la Interfaz Gráfica
-* Diseñar un espacio de trabajo limpio donde la tabla de registros y el balance individual coexistan en una sola ventana de escritorio.
-* Implementar retroalimentación visual instantánea mediante un componente propio que transmita el estado del participante mediante cambios de color (verde para saldo acreedor, rojo para saldo deudor y gris para saldo neutral).
-* Aislar la capa de renderizado de la capa matemática y de negocio siguiendo el patrón arquitectónico Modelo-Vista-Controlador (MVC).
+Frente a esta situación, las alternativas comerciales más extendidas del mercado (como Splitwise o Tricount) presentan una serie de deficiencias estructurales:
 
----
+| Problema en el Mercado | Impacto en el Usuario | Enfoque Crítico |
+| :--- | :--- | :--- |
+| **Dependencia de la nube** | Obliga a disponer de conexión continua a internet para consultar o ingresar datos. | Inoperatividad en situaciones sin cobertura (viajes, desplazamientos). |
+| **Recopilación de datos** | Exige registro formal, correos electrónicos y almacenamiento de datos personales en servidores ajenos. | Pérdida de privacidad y fricción al dar de alta a participantes casuales. |
+| **Monetización invasiva** | Restricciones de operaciones diarias bajo muro de pago (*freemium*) o inserción agresiva de publicidad. | Experiencia de usuario degradada para una necesidad aritmética básica. |
+| **Interfaces sobrecargadas** | Múltiples menús, pasos innecesarios y algoritmos de liquidación en caja negra remota. | Pérdida de agilidad en el uso cotidiano. |
 
-## 2. Benchmarking (Análisis Comparativo)
+## 1.3. Propuesta de solución
+PayClear se define como una plataforma de software orientada a la tarea directa bajo el paradigma **Local-First**, fundamentada en:
 
-| Parámetro de Evaluación | Splitwise | Tricount | <u>PayClear<u>  |
-| :--- | :--- | :--- | :--- |
-| Plataforma Objetivo | Web y Móvil | Web y Móvil | Prototipo de escritorio navegable (Figma) con hoja de ruta a Swing y Flutter |
-| Dependencia de Conexión | Conectividad continua obligatoria | Obligatoria para sincronización | Funcionamiento 100% en local |
-| Gestión de Identidad | Cuenta y autenticación obligatoria | Enlace de grupo o cuenta | Sin registro ni almacenamiento de datos personales |
-| Modelo de Explotación | Freemium con restricciones diarias | Inserción de publicidad comercial | Software libre sin limitaciones ni costes |
-| Algoritmo de Liquidación | Cerrado en servidor | Algoritmo básico en la nube | Algoritmo voraz local |
-| Sobrecarga de Interfaz | Compleja con múltiples submenús | Moderada | Mínima y orientada a la tarea directa |
+* **Soberanía y privacidad absoluta de datos:** Funcionamiento 100% en local, sin cuentas obligatorias, contraseñas ni almacenamiento en servidores externos.
+* **Modelo abierto y sin barreras:** Ausencia total de publicidad, suscripciones o limitaciones diarias en el registro de movimientos.
+* **Algoritmo voraz local:** Optimización matemática integrada en el cliente que reduce el saldo consolidado al menor número posible de pagos directos entre personas.
+* **Flujo directo en dos pasos:** Interfaz optimizada exclusivamente para dos tareas esenciales: registrar movimiento y liquidar deudas.
+* **Diseño visual modular y desacoplado:** Presentación unificada en una sola ventana (tabla de gastos y balances individuales) con retroalimentación cromática del estado financiero y arquitectura desacoplada Modelo-Vista-Controlador (MVC).
 
----
+## 1.4. Objetivos del proyecto
 
-## 3. Planificación Ágil y Metodología Scrum (Sprint 1)
+### 1.4.1. Objetivo general
+Diseñar, prototipar y validar técnicamente una interfaz de usuario limpia, intuitiva y desacoplada para la gestión contable y la compensación multilateral de gastos compartidos en local, maximizando la privacidad y minimizando las transferencias bancarias necesarias.
 
-El desarrollo del proyecto se estructura bajo el marco de Scrum 2020 utilizando GitHub Projects como herramienta de control y seguimiento.
+### 1.4.2. Objetivos específicos
 
-### 3.1 Pila del Producto (Product Backlog) Priorizada
+| Área de Trabajo | Objetivos Específicos |
+| :--- | :--- |
+| **Diseño y Usabilidad (UI/UX)** | • Diseñar un espacio de trabajo único que integre en una sola ventana la tabla de registros y el balance por integrante.<br>• Crear el componente reutilizable `TarjetaSaldoParticipante` con señalización cromática según el estado contable.<br>• Diseñar un diálogo modal desacoplado (`DialogoDivisionRapida`) para agilizar el reparto sin interferir en la vista principal. |
+| **Arquitectura Técnica** | • Implementar el patrón Modelo-Vista-Controlador (MVC) para independizar el renderizado visual de la lógica matemática.<br>• Planificar la migración del prototipo hacia Java Swing con NetBeans Matisse y la especificación de Custom JavaBeans.<br>• Modelar el catálogo formal de clases y eventos de interacción del sistema. |
+| **Lógica Contable** | • Diseñar e integrar un algoritmo voraz local para calcular la ruta óptima de liquidación en el mínimo número de transacciones.<br>• Permitir el cálculo de balances contemplando tanto el reparto proporcional como el consumo individualizado por participante. |
 
-| Código | Descripción de la Funcionalidad | Prioridad | Estimación | Estado |
-| :---: | :--- | :---: | :---: | :--- |
-| PB-01 | Prototipo interactivo en Figma de la vista principal y calculadora | Muy Alta | 8 pts | Terminado |
-| PB-02 | Sistema de componentes visuales reutilizables en Figma (TarjetaSaldo) | Muy Alta | 8 pts | Terminado |
-| PB-03 | Especificación técnica de arquitectura MVC y modelo de clases | Alta | 5 pts | Terminado |
-| PB-04 | Pruebas de usabilidad y verificación del prototipo interactivo | Alta | 5 pts | Terminado |
-| PB-05 | Implementación del maquetado Swing con NetBeans Matisse | Alta | 8 pts | Sprint 2 |
-| PB-06 | Programación del Custom JavaBean en Java Swing | Muy Alta | 8 pts | Sprint 2 |
-| PB-07 | Persistencia local de balances en formato plano / JSON | Media | 5 pts | Sprint 2 |
-| PB-08 | División avanzada asimétrica y soporte de pagos parciales | Media | 8 pts | Sprint 2 |
-| PB-09 | Exportación de balances a ficheros CSV y PDF | Baja | 3 pts | Sprint 3 |
-| PB-10 | Migración multiplataforma con cliente nativo en Flutter | Baja | 13 pts | Sprint 3 |
+## 1.5. Alcance del proyecto
+El alcance del proyecto se estructura en tres fases e hitos técnicos:
 
-### 3.2 Pila del Sprint (Sprint Backlog 1)
+| Fase / Sprint | Estado | Entregables y Líneas de Trabajo |
+| :---: | :---: | :--- |
+| **Sprint 1** | **Completado** | • Prototipo interactivo navegable de alta fidelidad en Figma (vista principal y calculadora modal).<br>• Sistema de componentes visuales reutilizables con variantes de estado (`TarjetaSaldoParticipante`).<br>• Especificación técnica de la arquitectura MVC, modelo de clases y validación funcional del algoritmo de liquidación. |
+| **Sprint 2** | *Planificado* | • Maquetación de la interfaz gráfica de escritorio en Java Swing con NetBeans Matisse.<br>• Implementación del componente reutilizable como Custom JavaBean.<br>• Persistencia de datos en ficheros locales estructurados (JSON/fichero plano) y lógica avanzada de reparto asimétrico. |
+| **Sprint 3** | *Proyectado* | • Módulo de exportación de resúmenes y balances a documentos CSV y PDF.<br>• Migración e implementación de un cliente nativo multiplataforma utilizando Flutter y Dart. |
 
-* Objetivo del Sprint (Sprint Goal): Diseñar y entregar un prototipo interactivo de alta fidelidad en Figma que simule de forma completa el comportamiento de una interfaz operativa de escritorio, definiendo el sistema de componentes visuales reutilizables y la especificación técnica formal de la arquitectura MVC para su posterior implementación.
-* Definición de Terminado (Definition of Done - DoD):
-  1. Flujo completo navegable en Figma sin enlaces rotos ni botones sin acción en el caso de uso base.
-  2. Componente visual reutilizable modelado con variantes de estado (acreedor, deudor y neutral).
-  3. Memoria técnica completa en Markdown cubriendo los criterios del RA1.
-  4. Tablero de GitHub Projects actualizado con las tareas del Sprint 1 finalizadas y vinculadas al incremento entregado.
+## 1.6. Limitaciones y exclusiones
+Para mantener el foco en la calidad de la interfaz y la privacidad de la arquitectura, se establecen las siguientes restricciones:
 
-| Issue | Tarea Técnica | Criterio RA1 | Responsable | Estimación |
-| :---: | :--- | :---: | :--- | :---: |
-| #15 | Redacción de la Memoria Técnica en Markdown | RA1.a | Guillermo / Jesús | 3 pts |
-| #17 | [Diseño/UI] Sistema de Componentes Reutilizables en Figma (TarjetaSaldoParticipante) | RA1.d, RA1.g | Guillermo | 5 pts |
-| #18 | [Diseño/UI] Maquetación de la Ventana Principal en Figma (VistaPrincipal) | RA1.b, RA1.c | José Luis | 6 pts |
-| #19 | [Diseño/UI] Diseño del Diálogo Modal de la Calculadora Rápida en Figma | RA1.b, RA1.c | José Luis | 3 pts |
-| #20 | [Prototipado] Conexión Interactiva y Flujo de Navegación en Figma | RA1.f, RA1.g | Guillermo | 5 pts |
-| #21 | [Validación/QA] Pruebas de Usabilidad y Verificación del Prototipo Interactivo | RA1.h | Equipo Scrum | 2 pts |
-| #22 | [Sprint] Preparación y Ensayo de la Sprint Review (10 min) | Evaluación | Equipo Scrum | 2 pts |
-| #23 | [Arquitectura] Especificación del Modelo de Datos y Flujo de Navegación | RA1.h | Jesús | 4 pts |
+* **Alcance de la fase actual:** El entregable del Sprint 1 se limita al prototipo interactivo de alta fidelidad en Figma, sus especificaciones de diseño y la memoria técnica; la implementación en código ejecutable (Swing/Flutter) forma parte de los sprints posteriores.
+* **Exclusión de conectividad y nube:** No se contempla la inclusión de pasarelas de pago telemático, sincronización multiusuario en tiempo real ni almacenamiento en bases de datos en la nube.
+* **Exclusión de cuentas y perfiles:** Se descartan módulos de inicio de sesión, roles de usuario, sistemas de autenticación y gestión de credenciales.
+* **Tecnologías descartadas:** Se excluye de forma justificada el uso de bibliotecas gráficas obsoletas como Java AWT, debido a su dependencia del sistema operativo, estética desfasada e inconsistencias visuales multiplataforma.
 
----
+## 1.7. Estructura de la memoria
+El resto del presente documento técnico se desarrollará a lo largo del curso en los siguientes bloques temáticos:
 
-## 4. Alcance Técnico y Arquitectura del Sistema
+| Sección | Contenido Proyectado |
+| :--- | :--- |
+| **1. Análisis del Contexto y Viabilidad** | Estudio de mercado exhaustivo, encuestas de usuarios, viabilidad técnica, económica y legal (RGPD). |
+| **2. Planificación y Gestión del Proyecto** | Metodología Scrum, roles, presupuesto detallado y gestión del repositorio. |
+| **3. Análisis de Requisitos** | Requisitos funcionales, no funcionales, reglas de negocio y matriz de trazabilidad. |
+| **4. Diseño de la Solución** | Arquitectura del software, diseño de datos, mapas de navegación y diseño visual. |
+| **5. Desarrollo e Implementación** | Construcción de componentes, frameworks, persistencia y código significativo. |
+| **6. Pruebas y Aseguramiento de Calidad** | Casos de prueba, cobertura, pruebas de usabilidad y corrección de incidencias. |
+| **7. Despliegue y Puesta en Producción** | Empaquetado de la solución, requisitos de instalación y mantenimiento. |
+| **8. Manuales de Uso** | Manual técnico, guía de usuario y resolución de dudas comunes. |
+| **9. Resultados y Evaluación Final** | Cumplimiento de objetivos, valor aportado y competencias adquiridas. |
+| **10. Conclusiones y Líneas Futuras** | Retos superados, escalabilidad y balance global del proyecto. |
 
-### 4.1 Patrón de Arquitectura Gráfica: MVC
-Se define una arquitectura desacoplada para garantizar que las clases visuales no contengan responsabilidades de negocio durante el desarrollo:
-
-```text
-       Eventos de Usuario
-  [Vista] ────────────────> [Controlador]
-     ^                           │
-     │ Actualiza                 │ Modifica estado
-     │ componentes               ▼ y ejecuta cálculos
-     └─────────────────────── [Modelo]
-```
-
-* Modelo (com.payclear.modelo): Clases Participante y Gasto. Mantendrán el estado contable y la lógica del algoritmo voraz sin dependencias de paquetes gráficos.
-* Vista (com.payclear.vista): Formularios prototipados inicialmente en Figma y proyectados para maquetación en NetBeans Matisse (VistaPrincipal y DialogoDivisionRapida). Su función se restringe a renderizar información y capturar interacciones.
-* Controlador (com.payclear.controlador): Clase ControladorPrincipal. Gestionará los eventos de usuario mediante interfaces de escucha, mediando entre el modelo de balances y los componentes de la vista.
-
-### 4.2 Análisis Comparativo de Tecnologías de Interfaz (Criterio RA1.a)
-
-| Tecnología Evaluada | Naturaleza de Componentes | Ventajas Destacadas | Inconvenientes Identificados | Selección en el Proyecto |
-| :--- | :--- | :--- | :--- | :--- |
-| Java AWT | Pesados, renderizados por el SO | Rendimiento nativo en sistemas legados | Apariencia anticuada, inconsistencia visual entre plataformas | Descartado |
-| Java Swing | Ligeros, dibujados por la JVM | Totalmente personalizable, soporte nativo de la especificación JavaBeans y compatibilidad con editores visuales | Mayor carga de memoria si no se gestiona correctamente el repintado | Seleccionado como tecnología de escritorio para la fase de código |
-| JavaFX | Avanzados basados en Scene Graph | Soporte nativo para CSS, aceleración gráfica por GPU y separación declarativa con FXML | Desacoplado del JDK a partir de Java 11; requiere módulos externos | Evaluado para iteraciones posteriores |
-| Flutter / Dart | Motor de renderizado propio (Impeller/Skia) | Código base único para móvil, web y escritorio, alto rendimiento nativo | Requiere introducir un lenguaje ajeno a Java (Dart) | Seleccionado en la hoja de ruta móvil del Proyecto Integrador |
-
-### 4.3 Especificación del Componente Reutilizable (Criterios RA1.d, RA1.g)
-Para la representación gráfica de saldos individuales se ha creado el componente maestro reutilizable TarjetaSaldoParticipante en Figma, modelando sus especificaciones técnicas de cara a su futura conversión a JavaBean en Java Swing:
-
-* Requisitos del Componente:
-  * Diseñado como componente maestro con propiedades editables de texto: Nombre del participante e Importe de saldo.
-  * Variantes de estado visual creadas mediante componentes conmutables:
-    * Estado Acreedor: Fondo o acento verde suave, texto destacado en verde (#2E7D32) para saldos positivos a favor.
-    * Estado Deudor: Fondo o acento rojo suave, texto destacado en rojo (#C62828) para saldos negativos pendientes.
-    * Estado Neutral: Tipografía en gris medio (#757575) para balances en 0,00 €.
-* Campo de Aplicación: Componente modular diseñado para insertarse de manera dinámica en listas verticales dentro del panel lateral de la ventana principal, permitiendo escalar el número de integrantes sin desajustar el diseño base.
-
-### 4.4 Simulación de Eventos y Transiciones en el Prototipo (Criterios RA1.e, RA1.f, RA1.g)
-El prototipo de Figma satisface los criterios de asociación de eventos y respuesta a acciones mediante la configuración de su motor de interacción:
-
-1. Asociación de Acciones a Disparadores: Se han vinculado eventos On Click en los botones de acción principales.
-2. Diálogo Modal Desacoplado: El botón de la calculadora de división rápida dispara la apertura de la ventana secundaria utilizando la propiedad Open Overlay centrada con fondo oscurecido (Backdrop), garantizando el comportamiento modal requerido.
-3. Transición de Estado y Carga de Datos: La acción de confirmar gasto conduce a la pantalla donde las tarjetas de balance cambian automáticamente de estado neutro a variantes acreedoras y deudoras.
-4. Simulación de Liquidación: Un botón de acción principal conduce a la vista de conciliación, desplegando el número mínimo de pagos directos resultantes del caso de uso.
-
-### 4.5 Catálogo Conceptual de Clases y Métodos
-
-```text
-com.payclear
-|-- modelo
-|   |-- Participante
-|   |   |-- Atributos: identificador (String), nombre (String), saldo (double)
-|   |   `-- Métodos: getIdentificador(), getNombre(), getSaldo(), modificarSaldo(double)
-|   `-- Gasto
-|       |-- Atributos: identificador (String), concepto (String), importeTotal (double), pagador (Participante), participantes (List<Participante>)
-|       `-- Métodos: getImporteTotal(), getPagador(), obtenerCuotaPorPersona()
-|-- componente
-|   `-- TarjetaSaldoParticipante (Componente visual reutilizable)
-|       |-- Propiedades: nombreParticipante, saldoActual, estadoCromatico
-|       `-- Variantes de visualización: Acreedor (verde), Deudor (rojo), Neutral (gris)
-|-- vista
-|   |-- VistaPrincipal (Frame principal)
-|   |   `-- Elementos: panelTarjetas, tablaGastos, barraAcciones
-|   `-- DialogoDivisionRapida (Modal Overlay)
-|       `-- Elementos: campoImporte, selectorPersonas, cuotaCalculada
-`-- controlador
-    `-- ControladorPrincipal (Gestión de eventos)
-        `-- Acciones: registrarGasto, registrarParticipante, calcularDivision, liquidarBalances
-```
-
----
-
-## 5. Validación Funcional del Algoritmo y Prototipo
-
-Para validar el flujo interactivo de la interfaz y la precisión contable del modelo de datos, se define un caso de uso real con cuatro integrantes (Guillermo, Jesús, José Luis y Pablo). 
-
-En este escenario, los gastos no se dividen a partes iguales de forma ciega: una persona adelanta el importe total de la factura, pero el sistema asigna a cada participante su cuota individual en función de su consumo real.
-
----
-
-### 5.1 Registro de Movimientos con Consumo Individualizado
-
-| Concepto Registrado | Importe Total | Pagado por | Desglose de Consumo Individual por Integrante |
-| :--- | :---: | :--- | :--- |
-| **Cena en restaurante** | 50,00 € | Guillermo | José Luis: 20,00 € (plato especial)<br>Guillermo: 12,00 € (consumo propio)<br>Pablo: 10,00 € (menú estándar)<br>Jesús: 8,00 € (plato básico) |
-| **Compra compartida de piso** | 40,00 € | José Luis | Jesús: 15,00 € (artículos personales)<br>José Luis: 15,00 € (consumo propio)<br>Guillermo: 10,00 € (productos comunes)<br>Pablo: 0,00 € (no participa) |
-| **Transporte / Taxi puntual** | 20,00 € | Jesús | Pablo: 15,00 € (traslado personal)<br>Jesús: 5,00 € (trayecto propio)<br>Guillermo: 0,00 € (no participa)<br>José Luis: 0,00 € (no participa) |
-
----
-
-### 5.2 Determinación de Balances Netos
-
-El balance se calcula restando el gasto real imputado al total adelantado por cada persona (`Balance = Total Pagado - Total Consumido`):
-
-| Integrante | Total Adelantado | Total Imputado (Consumo) | Balance Final | Estado Visual de la Tarjeta en Figma |
-| :--- | :---: | :---: | :---: | :--- |
-| **Guillermo** | 50,00 € | 22,00 € (12 + 10) | **+28,00 €** | 🟢 [Acreedor] |
-| **José Luis** | 40,00 € | 35,00 € (20 + 15) | **+5,00 €** | 🟢 [Acreedor] |
-| **Jesús** | 20,00 € | 28,00 € (8 + 15 + 5) | **-8,00 €** | 🔴 [Deudor] |
-| **Pablo** | 0,00 € | 25,00 € (10 + 15) | **-25,00 €** | 🔴 [Deudor] |
-| **Total Grupo** | **110,00 €** | **110,00 €** | **0,00 €** | Equilibrio contable verificado |
-
----
-
-### 5.3 Compensación Multilateral Simplificada (Settle Up)
-
-Si los integrantes pagaran sus deudas de forma manual y cruzada por cada ticket, se requerirían múltiples transferencias redundantes. 
-
-El algoritmo voraz toma los saldos consolidados y calcula la ruta óptima de liquidación en solo 3 pagos directos:
-
-```text
-[Deudor] Pablo  ──────── 25,00 € ────────> [Acreedor] Guillermo
-[Deudor] Jesús  ────────  3,00 € ────────> [Acreedor] Guillermo
-[Deudor] Jesús  ────────  5,00 € ────────> [Acreedor] José Luis
-```
 
 * Pablo salda su deuda total (-25,00 €) transfiriendo 25,00 € a Guillermo.
 * Jesús salda su deuda total (-8,00 €) pagando 3,00 € a Guillermo (completando los +28,00 € que le correspondían cobrar) y 5,00 € a José Luis (completando los +5,00 € que le correspondían cobrar).
