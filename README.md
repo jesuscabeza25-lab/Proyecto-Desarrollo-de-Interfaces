@@ -29,7 +29,6 @@ Nace como respuesta directa frente a soluciones comerciales privativas (Splitwis
 
 ## 2. Entregables del Sprint 1 (02/10/2026)
 
-* **Prototipo Interactivo:** [Acceso al prototipo interactivo en Figma](https://www.figma.com/make/tw427B0LEsxsFf9xkGl7hG/Maquetacion-Vista-Principal-PI?t=gVKO8OXGEtpU9tRD-1)
 * **Gestion del Proyecto:** [Tablero Kanban en GitHub Projects](https://github.com/users/jesuscabeza25-lab/projects/1)
 * **Documentacion Tecnica Completa:** Consultar el archivo [MEMORIA.md](MEMORIA.md) para el analisis formal, especificaciones tecnicas y diseño de componentes.
 
